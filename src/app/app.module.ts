@@ -18,7 +18,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { Configuration } from 'msal';
 import { ProfileComponent } from './profile/profile.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
 
 export const protectedResourceMap: [string, string[]][] = [
   ['https://graph.microsoft.com/v1.0/me', ['user.read']]
@@ -62,8 +61,7 @@ function MSALAngularConfigFactory(): MsalAngularConfiguration {
   declarations: [
     AppComponent,
     ProfileComponent,
-    HomeComponent,
-    TodoListComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,

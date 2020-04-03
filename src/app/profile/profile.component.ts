@@ -35,22 +35,11 @@ export class ProfileComponent implements OnInit {
       multiSelect: false,
       // scopes: "user.read files.read files.read.all sites.read.all",
       advanced: {
-        // redirectUri: "http://localhost:4200/profile"
         queryParameters: "select=id,@microsoft.graph.downloadUrl",
         filter: "folder,.twdx" /* display folder and files with extension '.twdx' only */
       },
       success: function(files) {
-        // let getUrl = '@microsoft.graph.downloadUrl'; 
         console.info(Object.values(files.value[0])[1]);
-        // const options = {
-        //   authProvider,
-        // };
-        
-        // const client = Client.init(options);
-        
-        // let res = await client.api(`/me/drive/items/${files.value[0].id}/content`)
-          // .get();
-        debugger 
       },
       cancel: function() { /* cancel handler */ },
       error: function(error) { /* error handler */ }
